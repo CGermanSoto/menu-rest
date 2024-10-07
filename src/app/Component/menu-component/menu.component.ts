@@ -6,8 +6,8 @@ import { ComidaComponent } from "../comida/comida.component";
   selector: 'app-menu-component',
   standalone: true,
   imports: [NombreCategoriaComponent, ComidaComponent],
-  templateUrl: './menu-component.component.html',
-  styleUrl: './menu-component.component.css'
+  templateUrl: './menu.component.html',
+  styleUrl: './menu.component.css'
 })
 export class MenuComponentComponent {
 
