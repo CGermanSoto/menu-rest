@@ -1,7 +1,6 @@
-<h3>Pizza Muzzarella </h3>
-<ul>
-    <h5>Masa madre</h5>
-    <h5>Muzarella notco</h5>
-</ul>
-<h4>Precio $5000</h4>
-
+<div *ngFor="let comida of comidaList">
+    <h3>{{comida.nombre}}</h3>
+    <img src={{comida.ubicacionImagen}} alt="Logo negocio">
+    <p>{{comida.ingredientes}}</p>
+    <h4>{{comida.precio}}</h4>
+</div>
