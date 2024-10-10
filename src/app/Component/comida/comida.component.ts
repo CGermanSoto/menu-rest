@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { comidaList } from './comida.mock';
+import { comidaList } from './pizza.mock';
 import { NgFor } from '@angular/common';
 
 @Component({

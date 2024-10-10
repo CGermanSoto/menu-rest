@@ -1,1 +1,6 @@
-<p>Whatsapp 011 73631331</p>
+
+<div *ngFor="let dato of datosList">
+    <img src={{dato.imagen}}>
+    <p>{{dato.tipo}}</p>
+    <p>{{dato.descripcion}}</p>
+</div>
