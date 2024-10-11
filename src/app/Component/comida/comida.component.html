@@ -1,6 +1,10 @@
-<div *ngFor="let comida of comidaList">
-    <h3>{{comida.nombre}}</h3>
-    <img src={{comida.ubicacionImagen}} alt="Logo negocio">
-    <p>{{comida.ingredientes}}</p>
-    <h4>{{comida.precio}}</h4>
-</div>
+<div *ngFor="let comida of comidaList" class="card">
+    <div class="comida-detalles">
+      <h3 class="comida-nombre">{{comida.nombre}}</h3>
+      <p class="comida-ingredientes">{{comida.ingredientes}}</p>
+      <h4 class="comida-precio">{{comida.precio}}</h4>
+    </div>
+    <img [src]="comida.ubicacionImagen" alt="Logo negocio" class="comida-imagen">
+  </div>
+  
+  

@@ -1,4 +1,38 @@
-img {
-    max-width: 1%;
-    height: auto;
-}
+.info-bar {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    width: 100%; /* Ocupa todo el ancho del componente */
+    padding: 5px 10px; /* Padding reducido */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .info-icon {
+    width: 20px; /* Icono más pequeño */
+    height: 20px;
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .info-text {
+    font-size: 0.85em; /* Texto más pequeño */
+    color: #333; /* Color de texto más oscuro */
+    margin: 0; /* Quitar márgenes adicionales */
+  }
+  
+  @media (max-width: 768px) {
+    .info-bar {
+      padding: 5px; /* Aún más compacto en pantallas pequeñas */
+    }
+  
+    .info-icon {
+      width: 18px;
+      height: 18px; /* Icono aún más pequeño en responsive */
+    }
+  
+    .info-text {
+      font-size: 0.75em; /* Texto más pequeño en pantallas pequeñas */
+    }
+  }
+  
