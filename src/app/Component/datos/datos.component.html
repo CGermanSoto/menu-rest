@@ -1,6 +1,5 @@
-
-<div *ngFor="let dato of datosList">
-    <img src={{dato.imagen}}>
-    <p>{{dato.tipo}}</p>
-    <p>{{dato.descripcion}}</p>
-</div>
+<div *ngFor="let dato of datosList" class="info-bar">
+    <img [src]="dato.imagen" alt="Icono" class="info-icon">
+    <p class="info-text">{{dato.tipo}}: {{dato.descripcion}}</p>
+  </div>
+  

@@ -4,12 +4,13 @@ import { MenuComponentComponent } from "./menu-component/menu.component";
 import { NombreCategoriaComponent } from "./nombre-categoria/nombre-categoria.component";
 import { ComidaComponent } from "./comida/comida.component";
 import { DatosComponent } from "./datos/datos.component";
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AppRoutingModule } from '../app.routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenuComponentComponent, NombreCategoriaComponent, ComidaComponent, DatosComponent, NavBarComponent],
+  imports: [RouterOutlet, MenuComponentComponent, NombreCategoriaComponent, ComidaComponent, DatosComponent, NavBarComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
