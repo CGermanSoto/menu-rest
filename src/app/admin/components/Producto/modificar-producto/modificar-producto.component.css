@@ -1,0 +1,16 @@
+img {
+    width: 10%;
+    max-height: 10%;
+}
+
+.input-group{
+    width: 100%;
+}
+
+.precio {
+    width: 5%;
+}
+
+.precio-td {
+    width: 20%;
+}

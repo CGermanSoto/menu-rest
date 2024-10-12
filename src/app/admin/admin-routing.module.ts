@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministradorComponent } from './components/administrador/administrador.component';
-import { MenuAdminComponent } from './components/menu-admin/menu-admin.component';
-import { DatosContactoComponent } from './components/datos-contacto/datos-contacto.component';
-import { OtrosComponent } from './components/otros/otros.component';
+import { AdministradorComponent } from './components/administrador-index/administrador.component';
+import { nuevoProductoComponent } from './components/Producto/nuevo-producto/nuevo-producto.component';
+import { DatosContactoComponent } from './components/datosContacto-admin/datos-contacto.component';
+import { ServicioComponent } from './components/servicio/servicio.component';
+import { InicioAdminComponent } from './components/inicio-admin/inicio-admin.component';
+import { ModificarProductoComponent } from './components/Producto/modificar-producto/modificar-producto.component';
+import { EliminarProductoComponent } from './components/Producto/eliminar-producto/eliminar-producto.component';
+import { CategoriasAdminComponent } from './components/categorias-admin/categorias-admin.component';
+
 
 const routes: Routes = [
   { 
     path: '', component: AdministradorComponent, // Layout con el sidebar
     children: [
-      { path: 'menu', component: MenuAdminComponent },  // Cambia solo el contenido a la derecha
-      { path: 'contacto', component: DatosContactoComponent },
-      { path: 'otros', component: OtrosComponent },
-      // { path: '', redirectTo: 'menu', pathMatch: 'full' } // Redirigir a 'menu' por defecto
+      { path: '', component: InicioAdminComponent },
+      { path: 'nuevo-producto', component: nuevoProductoComponent },  // Cambia solo el contenido a la derecha
+      { path: 'modificar-producto', component: ModificarProductoComponent },
+      { path: 'eliminar-producto', component: EliminarProductoComponent },
+      {path: 'categoria', component: CategoriasAdminComponent },
+      {path: 'datos', component: DatosContactoComponent },
+      {path: 'servicio', component: ServicioComponent },
+      { path: 'admin', redirectTo: 'admin', pathMatch: 'full' } // Redirigir a 'menu' por defecto
     ]
   }
 ];

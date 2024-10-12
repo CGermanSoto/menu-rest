@@ -1,80 +1,90 @@
- .card {
-    display: flex;
+/* Contenedor principal que engloba las tarjetas */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura disponible de la pantalla */
+  background-color: white; /* Color de fondo suave */
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Define el ancho máximo de la tarjeta */
+  background-color: #fff;
+  width: 100%; /* Asegura que la tarjeta ocupe todo el ancho disponible */
+}
+
+.comida-detalles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.comida-imagen {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+.comida-nombre {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.comida-ingredientes {
+  font-size: 0.9em;
+  color: #555;
+  margin: 5px 0;
+}
+
+.comida-precio {
+  font-size: 1.1em;
+  color: white;
+  background-color: #cf7132; /* Fondo bordó oscuro */
+  padding: 2px 6px; /* Espacio reducido alrededor del texto */
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .card {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    background-color: #fff;
+    align-items: flex-start;
+    max-width: 100%; /* Ajusta el ancho en pantallas pequeñas */
   }
-  
+
   .comida-detalles {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
+    width: 75%;
   }
-  
+
   .comida-imagen {
     width: 25%;
-    height: auto;
-    object-fit: cover;
-    margin-left: 15px;
-    border-radius: 10px;
+    margin-left: 10px;
   }
-  
-  .comida-nombre {
-    font-weight: bold;
-    font-size: 1.2em;
+}
+
+@media (max-width: 480px) {
+  .comida-detalles {
+    width: 75%;
   }
-  
-  .comida-ingredientes {
-    font-size: 0.9em;
-    color: #555;
-    margin: 5px 0;
+
+  .comida-imagen {
+    width: 25%;
+    margin-left: 10px;
   }
-  
-  .comida-precio {
-    font-size: 1.1em;
-    color: white;
-    background-color: #800000; /* Fondo bordó oscuro */
-    padding: 2px 6px; /* Espacio reducido alrededor del texto */
-    border-radius: 5px;
-    display: inline-block; /* Ajusta el ancho al contenido */
-    width: 50%; /* Hace que el ancho se ajuste al contenido */
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-  }
-  
-  
-  @media (max-width: 768px) {
-    .card {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  
-    .comida-detalles {
-      width: 75%;
-    }
-  
-    .comida-imagen {
-      width: 25%;
-      margin-left: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .comida-detalles {
-      width: 75%;
-    }
-  
-    .comida-imagen {
-      width: 25%;
-      margin-left: 10px;
-    }
-  }
-  
+}

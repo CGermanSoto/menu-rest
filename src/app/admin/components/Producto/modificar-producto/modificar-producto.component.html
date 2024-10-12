@@ -1,0 +1,117 @@
+<h1>Modificar Producto</h1>
+
+<h3>Buscar Producto</h3>
+<form class="row gy-2 gx-3 align-items-center">
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingInput">Name</label>
+      <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+      <select class="form-select" id="autoSizingSelect">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+        <label class="form-check-label" for="autoSizingCheck">
+          Remember me
+        </label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+          <th scope="col">#Id Producto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col" class="categoria">Categoría</th>
+          <th scope="col">Imagen</th>
+          <th scope="col" class="precio">Precio</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>
+            otto
+          </td>
+          <td>
+            <input type="file" class="">
+          </td>
+          <td class="precio-td">
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+              </div>
+          </td>
+          <td>
+            <a href="#" ><img src="editar.png"></a>
+          </td>
+          <td>
+            <a href="#" ><img src="eliminar.png"></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>Otto</td>
+          <td>
+            <input type="file" class="">
+          </td>
+          <td>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+              </div>
+          </td>
+          <td>
+            <a href="#" ><img src="editar.png"></a>
+          </td>
+          <td>
+            <a href="#" ><img src="eliminar.png"></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>Otto</td>
+          <td>
+            <input type="file" class="">
+          </td>
+          <td>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+              </div>
+          </td>
+          <td>
+            <a href="#" ><img src="editar.png"></a>
+          </td>
+          <td>
+            <a href="#" ><img src="eliminar.png"></a>
+          </td>
+        </tr>
+      </tbody>
+</table>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary me-md-2" type="button">Guardar Cambios</button>
+    <button class="btn btn-warning" type="button">Limpiar</button>
+</div>

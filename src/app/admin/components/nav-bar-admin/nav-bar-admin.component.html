@@ -2,10 +2,31 @@
   <!-- Sidebar -->
   <nav class="sidebar">
     <ul>
-      <li><a routerLink="menu" routerLinkActive="active">Menú</a></li>
-      <li><a routerLink="contacto" routerLinkActive="active">Datos de Contacto</a></li>
-      <li><a routerLink="otros" routerLinkActive="active">Otros</a></li>
-      <!-- Puedes agregar más enlaces a otras secciones -->
+      <!-- Inicio ubicado arriba -->
+      <li><a routerLink="/admin" ><img src="pagina-de-inicio.png">  Inicio</a></li>
+      <hr>
+      
+      <!-- Opciones de productos, categorías y datos en el medio -->
+      <div class="middle-content">
+        <h4>Productos</h4>
+        <li><a routerLink="nuevo-producto" routerLinkActive="active"><img src="agregar-producto.png">  Nuevo Producto</a></li>
+        <li><a routerLink="modificar-producto" routerLinkActive="active"><img src="edicion.png">  Modificar Producto</a></li>
+        <hr>
+        <h4>Categorías</h4>
+        <li><a routerLink="categoria" routerLinkActive="active"><img src="categorizacion.png">  Categorías</a></li>
+        <hr>
+        <h4>Datos</h4>
+        <li><a routerLink="datos" routerLinkActive="active"><img src="seguidores.png">  Datos</a></li>
+        <hr>
+        <h4>Servicio</h4>
+        <li><a routerLink="servicio" routerLinkActive="active"><img src="servicio-al-cliente.png">  Contacto</a></li>
+      </div>
+
+      <!-- Botones alineados abajo -->
+      <div class="buttons-container">
+        <button class="btn-primary" type="button">Visitar Menú</button>
+        <button class="btn-danger" type="button">Cerrar sesión</button>
+      </div>
     </ul>
   </nav>
 
@@ -14,3 +35,5 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+
+

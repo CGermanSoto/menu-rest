@@ -1,4 +1,5 @@
-<div *ngFor="let comida of comidaList" class="card">
+<div class="main-container">
+  <div *ngFor="let comida of comidaList" class="card">
     <div class="comida-detalles">
       <h3 class="comida-nombre">{{comida.nombre}}</h3>
       <p class="comida-ingredientes">{{comida.ingredientes}}</p>
@@ -6,5 +7,7 @@
     </div>
     <img [src]="comida.ubicacionImagen" alt="Logo negocio" class="comida-imagen">
   </div>
+</div>
+
   
   
