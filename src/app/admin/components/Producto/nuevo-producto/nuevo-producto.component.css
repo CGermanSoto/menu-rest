@@ -1,21 +1,20 @@
-/* Encabezado */
+
 h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: #4e73df; /* Azul moderno */
+    color: #4e73df; 
     text-align: center;
     margin-bottom: 30px;
   }
   
-  /* Estilo para el formulario */
   .form-label {
     font-weight: 500;
-    color: #2d3748; /* Gris oscuro */
+    color: #2d3748; 
     margin-bottom: 8px;
   }
   
   .form-control {
-    border: 1px solid #cbd5e0; /* Borde sutil */
+    border: 1px solid #cbd5e0; 
     border-radius: 8px;
     padding: 10px;
     font-size: 1rem;
@@ -23,13 +22,13 @@ h1 {
   }
   
   .form-control:focus {
-    border-color: #4e73df; /* Color al enfocar */
-    box-shadow: 0 0 10px rgba(78, 115, 223, 0.2); /* Sombra al hacer focus */
+    border-color: #4e73df; 
+    box-shadow: 0 0 10px rgba(78, 115, 223, 0.2); 
   }
   
-  /* Estilo para el dropdown */
+
   .dropdown-toggle {
-    background-color: #4e73df; /* Azul varonil */
+    background-color: #4e73df; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -38,11 +37,11 @@ h1 {
   }
   
   .dropdown-toggle:hover {
-    background-color: #3b4cca; /* Hover más oscuro */
+    background-color: #3b4cca; 
   }
   
   .dropdown-menu {
-    background-color: #f7fafc; /* Fondo claro */
+    background-color: #f7fafc; 
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -53,10 +52,10 @@ h1 {
   }
   
   .dropdown-item:hover {
-    background-color: #edf2f7; /* Hover suave */
+    background-color: #edf2f7; 
   }
   
-  /* Botones */
+
   .btn-primary {
     background-color: #4e73df;
     color: white;
@@ -81,7 +80,6 @@ h1 {
     background-color: #ed8936;
   }
   
-  /* Organización del formulario */
   .mb-3 {
     margin-bottom: 20px;
   }
@@ -89,16 +87,16 @@ h1 {
   .d-grid {
     display: flex;
     justify-content: flex-end;
-    gap: 20px; /* Espacio entre los botones */
+    gap: 20px; 
   }
   
-  /* Ajustes de la estructura del formulario */
+
   form {
     max-width: 600px;
-    margin: 0 auto; /* Centra el formulario */
+    margin: 0 auto; 
     background-color: #fff;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
   }
   

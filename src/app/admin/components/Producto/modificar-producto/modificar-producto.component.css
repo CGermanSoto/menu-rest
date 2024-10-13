@@ -1,16 +1,139 @@
-img {
-    width: 10%;
-    max-height: 10%;
-}
-
-.input-group{
+/* Estilo para los encabezados */
+h1, h3 {
+    font-family: 'Poppins', sans-serif; /* Alegre y moderna */
+    color: #4e73df;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  
+  /* Formulario de búsqueda */
+  form {
+    background-color: #f8f9fc; /* Fondo claro */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 30px;
+  }
+  
+  .form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    transition: border-color 0.3s;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 10px rgba(78, 115, 223, 0.2);
+  }
+  
+  /* Botones del formulario */
+  .btn-primary {
+    background-color: #4e73df;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #375a9e;
+  }
+  
+  /* Tabla */
+  .table {
     width: 100%;
-}
-
-.precio {
-    width: 5%;
-}
-
-.precio-td {
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .table th, .table td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f4f8; /* Hover suave */
+  }
+  
+  .table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Iconos */
+  img {
+    width: 30px; 
+    height: 30px;
+    transition: transform 0.3s;
+  }
+  
+  img:hover {
+    transform: scale(1.2); /* Efecto hover */
+  }
+  
+  /* Input de precio */
+  .input-group {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .input-group-text {
+    background-color: #e9ecef;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #cbd5e0;
+  }
+  
+  .input-group input {
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #cbd5e0;
+  }
+  
+  /* Botones finales */
+  .d-grid .btn-primary {
+    background-color: #4e73df;
+  }
+  
+  .d-grid .btn-warning {
+    background-color: #f6ad55;
+    color: white;
+  }
+  
+  .d-grid .btn-warning:hover {
+    background-color: #ed8936;
+  }
+  
+  .precio {
+    width: 10%;
+  }
+  
+  .precio-td {
     width: 20%;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .table {
+      font-size: 0.9rem;
+    }
+  
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .input-group {
+      margin-bottom: 15px;
+    }
+  }
+  

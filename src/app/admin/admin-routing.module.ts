@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdministradorComponent } from './components/administrador-index/administrador.component';
-import { nuevoProductoComponent } from './components/Producto/nuevo-producto/nuevo-producto.component';
+import { NuevoProductoComponent } from './components/Producto/nuevo-producto/nuevo-producto.component';
 import { DatosContactoComponent } from './components/datosContacto-admin/datos-contacto.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { InicioAdminComponent } from './components/inicio-admin/inicio-admin.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
     path: '', component: AdministradorComponent, // Layout con el sidebar
     children: [
       { path: '', component: InicioAdminComponent },
-      { path: 'nuevo-producto', component: nuevoProductoComponent },  // Cambia solo el contenido a la derecha
+      { path: 'nuevo-producto', component: NuevoProductoComponent }, 
       { path: 'modificar-producto', component: ModificarProductoComponent },
       { path: 'eliminar-producto', component: EliminarProductoComponent },
       {path: 'categoria', component: CategoriasAdminComponent },
