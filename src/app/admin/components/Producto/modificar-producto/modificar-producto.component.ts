@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../Services/api.service';
 import { Producto } from '../../../../models/producto.interface'; // Ajusta la ruta según tu estructura
-import { NgFor } from '@angular/common';
+import { NgFor, CommonModule  } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-modificar-producto',
   standalone: true,
-  imports: [NgFor, FormsModule],
+  imports: [NgFor, FormsModule, CommonModule],
+  providers: [CurrencyPipe],
   templateUrl: './modificar-producto.component.html',
   styleUrls: ['./modificar-producto.component.css']
 })
@@ -16,8 +18,9 @@ export class ModificarProductoComponent implements OnInit {
 
   productos: Producto[] = [];  // Lista de productos
   editableIndex: number[] = []; // Índices de productos editables
+  productosssss = [{ precio: 1250.5 }, { precio: 499.99 }];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private currencyPipe: CurrencyPipe) {}
 
   ngOnInit(): void {
     this.traerTodosLosProductos(); 
@@ -83,5 +86,14 @@ export class ModificarProductoComponent implements OnInit {
     this.editableIndex = [];
   }
 
+  formatearPrecio(precio: number): string {
+    return this.currencyPipe.transform(precio, 'ARS', 'symbol', '1.2-2') || '';
+  }
+
+  actualizarPrecio(index: number, event: Event) {
+    const inputElement = event.target as HTMLInputElement; // Cast a HTMLInputElement
+    const nuevoPrecio = inputElement.value;
+    this.productos[index].precio = parseFloat(nuevoPrecio) || 0;
+  }  
 
 }

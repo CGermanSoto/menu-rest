@@ -8,12 +8,11 @@ import { Producto } from '../../models/producto.interface';
   standalone: true,
   imports: [NgFor],
   templateUrl: './comida.component.html',
-  styleUrl: './comida.component.css'
+  styleUrls: ['./comida.component.css'] // Corrige el nombre aquí, `styleUrl` debería ser `styleUrls`
 })
 export class ComidaComponent {
-  productosList:any = [];
+  productosList: Producto[] = [];
 
-  
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -23,11 +22,19 @@ export class ComidaComponent {
   traerTodosLosProductos(): void {
     this.apiService.traerTodosLosProductos().subscribe(
       (data: Producto[]) => {
-        this.productosList = data;
+        this.productosList = data.map(producto => {
+          const imageType = producto.imagenBase64?.startsWith('/') ? 'png' : 'jpeg';
+          const imagenUrl = `data:image/${imageType};base64,${producto.imagenBase64}`;
+          return {
+            ...producto,
+            imagenUrl: imagenUrl
+          };
+        });
       },
       (error) => {
         console.error('Error al obtener productos:', error);
       }
     );
   }
+  
 }

@@ -3,11 +3,8 @@
     <div class="comida-detalles">
       <h3 class="comida-nombre">{{comida.nombre}}</h3>
       <p class="comida-ingredientes">{{comida.categoria}}</p>
-      <h4 class="comida-precio">$1400</h4>
+      <h4 class="comida-precio">{{'$' + comida.precio}}</h4>
     </div>
-    <img src="pizza.png" alt="Logo negocio" class="comida-imagen">
+    <img [src]="comida.imagenUrl || 'default-image.png'" alt="Imagen del producto" class="comida-imagen">
   </div>
 </div>
-
-  
-  

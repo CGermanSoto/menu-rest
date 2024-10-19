@@ -24,6 +24,31 @@
     />
   </div>
 
+  <div class="mb-3">
+    <label for="categoriaProducto" class="form-label">Categoría</label>
+    <input
+      type="text"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="categoriaProducto" class="form-label">Precio</label>
+    <input
+      type="text"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="categoriaProducto" class="form-label">Imagen</label>
+    <input
+      type="file"
+      class="form-control"
+      (change)="onFileSelected($event)"
+    />
+  </div>
+
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button class="btn btn-primary me-md-2" type="submit">
       Agregar Nuevo Producto
@@ -32,5 +57,7 @@
       Limpiar
     </button>
   </div>
+
+  
 </form>
 

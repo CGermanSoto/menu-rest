@@ -28,7 +28,9 @@
     <tr>
       <th scope="col">#Id Producto</th>
       <th scope="col">Nombre</th>
-      <th scope="col" class="categoria">Descripción</th>
+      <th scope="col" class="categoria">Categoría</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Imagen</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
     </tr>
@@ -50,6 +52,21 @@
         <input 
           type="text" 
           [(ngModel)]="producto.categoria"
+          [disabled]="!editableIndex.includes(i)">
+      </td>
+
+      <td>
+        <input
+          type="text"
+          [disabled]="!editableIndex.includes(i)"
+          [value]="!editableIndex.includes(i) ? (producto.precio | currency:'ARS':'symbol':'1.2-2') : producto.precio"
+          (change)="actualizarPrecio(i, $event)">
+      </td>          
+
+            
+      <td>
+        <input 
+          type="file"
           [disabled]="!editableIndex.includes(i)">
       </td>
 
