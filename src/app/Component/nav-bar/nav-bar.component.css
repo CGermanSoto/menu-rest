@@ -1,0 +1,48 @@
+.navbar {
+    background-color: white; /* Fondo sobrio */
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-scroll {
+    white-space: nowrap; /* No permite que el texto haga salto de línea */
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+}
+
+.navbar-nav {
+    display: inline-block; /* Mantén el contenido en línea */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.navbar-nav .nav-item {
+    display: inline-block; /* Cada item uno al lado del otro */
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #b46131;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #555;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .navbar-scroll {
+        overflow-x: scroll; /* Habilita el desplazamiento horizontal */
+        -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en móviles */
+    }
+
+    .navbar-nav {
+        text-align: left; /* El texto se alinea a la izquierda en pantallas pequeñas */
+    }
+
+    .nav-link {
+        padding: 10px 15px;
+    }
+}

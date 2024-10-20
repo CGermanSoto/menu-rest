@@ -1,7 +1,14 @@
 <ng-container *ngIf="!isAdminRoute">
-    <img src="logo_2.png" alt="Logo negocio">
-    <app-datos></app-datos>
-    <app-nav-bar></app-nav-bar>
-    <app-comida></app-comida>
-</ng-container>
-<router-outlet></router-outlet>
+    <div class="main-container">
+      <img src="logo_2.png" alt="Logo negocio" class="logo">
+      <app-nav-bar></app-nav-bar>
+      <div class="list-container">
+        <app-comida></app-comida>
+        <app-datos></app-datos>
+      </div>
+    </div>
+  </ng-container>
+  <router-outlet></router-outlet>  
+  
+
+  

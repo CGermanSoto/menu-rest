@@ -1,7 +1,7 @@
 
 import { RouterModule, Routes } from '@angular/router';
 import { ComidaComponent } from './Component/comida/comida.component';
-import { AdministradorComponent } from './admin/components/administrador/administrador.component';
+import { AdministradorComponent } from './admin/components/administrador-index/administrador.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
