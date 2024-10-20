@@ -18,7 +18,6 @@ export class ModificarProductoComponent implements OnInit {
 
   productos: Producto[] = [];  // Lista de productos
   editableIndex: number[] = []; // Índices de productos editables
-  productosssss = [{ precio: 1250.5 }, { precio: 499.99 }];
 
   constructor(private apiService: ApiService, private currencyPipe: CurrencyPipe) {}
 
