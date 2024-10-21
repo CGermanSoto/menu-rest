@@ -2,18 +2,8 @@
   <div class="container-fluid">
     <div class="navbar-scroll">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="comida">Menú</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="pizzas">Pizzas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="hamburguesas">Hamburguesas</a>
-        </li>
-        <!-- Agrega todas las opciones que necesites -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="promos">Promociones</a>
+        <li class="nav-item" *ngFor="let categoria of categorias">
+          <a class="nav-link" routerLink="categoria/{{ categoria.categoriaId }}">{{ categoria.categoria }}</a>
         </li>
       </ul>
     </div>

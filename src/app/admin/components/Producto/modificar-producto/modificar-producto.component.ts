@@ -5,6 +5,8 @@ import { NgFor, CommonModule  } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
+import { Categoria } from '../../../../models/categoria.interface';
+import { CategoriaService } from '../../../../Services/categoriaService.service';
 
 @Component({
   selector: 'app-modificar-producto',
@@ -15,15 +17,19 @@ import { CurrencyPipe } from '@angular/common';
   styleUrls: ['./modificar-producto.component.css']
 })
 export class ModificarProductoComponent implements OnInit {
+  productos: Producto[] = [];
+  editableIndex: number[] = [];
+  categoriasList: Categoria[] = [];
 
-  productos: Producto[] = [];  // Lista de productos
-  editableIndex: number[] = []; // Índices de productos editables
-  productosssss = [{ precio: 1250.5 }, { precio: 499.99 }];
-
-  constructor(private apiService: ApiService, private currencyPipe: CurrencyPipe) {}
+  constructor(
+    private apiService: ApiService, 
+    private categoriaService: CategoriaService, 
+    private currencyPipe: CurrencyPipe
+  ) {}
 
   ngOnInit(): void {
     this.traerTodosLosProductos(); 
+    this.traerTodasLasCategorias();  // Llama al método para cargar las categorías
   }
 
   traerTodosLosProductos(): void {
@@ -33,6 +39,17 @@ export class ModificarProductoComponent implements OnInit {
       },
       (error) => {
         console.error('Error al obtener productos:', error);
+      }
+    );
+  }
+
+  traerTodasLasCategorias(): void {
+    this.categoriaService.traerTodasLasCategorias().subscribe(
+      (categorias: Categoria[]) => {
+        this.categoriasList = categorias; 
+      },
+      (error) => {
+        console.error('Error al obtener categorías:', error);
       }
     );
   }
@@ -82,7 +99,6 @@ export class ModificarProductoComponent implements OnInit {
       );
     }
     
-    // Limpiar la lista de índices editables después de guardar
     this.editableIndex = [];
   }
 

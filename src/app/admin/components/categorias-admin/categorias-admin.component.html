@@ -1,52 +1,38 @@
 <h1>Administrar Categorías</h1>
 <table class="table table-hover table-bordered">
-    <thead>
-        <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Eliminar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="row">Pizzas</td>
-            <td>
-                <a href="#" ><img src="editar.png"></a>
-            </td>
-            <td>
-                <a href="#" ><img src="eliminar.png"></a>
-            </td>
-        </tr>
-        <tr>
-            <td scope="row">Hamburguesas</td>
-            <td>
-                <a href="#" ><img src="editar.png"></a>
-            </td>
-            <td>
-                <a href="#" ><img src="eliminar.png"></a>
-            </td>
-        </tr>
-        <tr>
-            <td scope="row">Bebidas</td>
-            <td>
-                <a href="#" ><img src="editar.png"></a>
-            </td>
-            <td>
-                <a href="#" ><img src="eliminar.png"></a>
-            </td>
-        </tr>
-        <tr>
-            <td scope="row">Postres</td>
-            <td>
-                <a href="#" ><img src="editar.png"></a>
-            </td>
-            <td>
-                <a href="#" ><img src="eliminar.png"></a>
-            </td>
-        </tr>
-
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categoriasList; let i = index">
+      <td scope="row">
+        <input 
+          type="text" 
+          [(ngModel)]="categoria.categoria" 
+          [disabled]="!editableIndex.includes(i)" 
+          class="form-control"
+        />
+      </td>
+      <td>
+        <!-- Siempre muestra el ícono, pero cambia el comportamiento -->
+        <a (click)="habilitarEdicion(i)">
+          <img [src]="editableIndex.includes(i) ? 'guardar.png' : 'editar.png'" alt="Editar o Guardar">
+        </a>
+      </td>
+      <td>
+        <a (click)="eliminarCategoria(categoria.categoriaId)">
+          <img src="eliminar.png" alt="Eliminar">
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>
+
+<!-- Botón para guardar cambios -->
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary me-md-2" type="button">Guardar Cambios</button>
+  <button class="btn btn-primary" type="button" (click)="guardarCambios()">Guardar Cambios</button>
 </div>

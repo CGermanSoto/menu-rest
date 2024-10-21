@@ -33,10 +33,14 @@
   </div>
 
   <div class="mb-3">
-    <label for="categoriaProducto" class="form-label">Precio</label>
+    <label for="precioProducto" class="form-label">Precio</label>
     <input
-      type="text"
+      type="number"
       class="form-control"
+      id="precioProducto"
+      [(ngModel)]="precio"
+      name="precio"
+      required
     />
   </div>
 
