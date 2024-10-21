@@ -1,27 +1,5 @@
 <h1>Modificar Producto</h1>
 
-<h3>Buscar Producto</h3>
-<form class="row gy-2 gx-3 align-items-center">
-    <div class="col-auto">
-      <label class="visually-hidden" for="autoSizingInput">Name</label>
-      <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
-    </div>
-    <div class="col-auto">
-      <label class="visually-hidden" for="autoSizingSelect">Preference</label>
-      <select class="form-select" id="autoSizingSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary">Buscar</button>
-      <button class="btn btn-warning" type="button">Limpiar</button>
-    </div>
-</form>
-
-
 <h3>Lista de Productos</h3>
 <table class="table table-hover table-bordered">
   <thead>
@@ -46,14 +24,17 @@
           [(ngModel)]="producto.nombre"
           [disabled]="!editableIndex.includes(i)">
       </td>
-
-      <!-- Campo para editar la categoría del producto -->
       <td>
-        <input 
-          type="text" 
-          [(ngModel)]="producto.categoria"
-          [disabled]="!editableIndex.includes(i)">
-      </td>
+        <select 
+          [(ngModel)]="producto.categoria" 
+          [disabled]="!editableIndex.includes(i)" 
+          class="form-select"
+        >
+          <option *ngFor="let categoria of categoriasList" [value]="categoria.categoria">
+            {{ categoria.categoria }}
+          </option>
+        </select>
+      </td>      
 
       <td>
         <input
@@ -73,7 +54,7 @@
       <!-- Botón para habilitar la edición -->
       <td>
         <a (click)="editarProducto(i)">
-          <img src="editar.png">
+          <img [src]="editableIndex.includes(i) ? 'guardar.png' : 'editar.png'" alt="Editar o Guardar">
         </a>
       </td>
 

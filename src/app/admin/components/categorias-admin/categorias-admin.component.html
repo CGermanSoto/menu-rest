@@ -8,72 +8,31 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let categoria of categoriasList">
+    <tr *ngFor="let categoria of categoriasList; let i = index">
       <td scope="row">
         <input 
           type="text" 
           [(ngModel)]="categoria.categoria" 
-          [readonly]="!categoria.editando" 
+          [disabled]="!editableIndex.includes(i)" 
           class="form-control"
         />
       </td>
       <td>
-        <button *ngIf="!categoria.editando" (click)="habilitarEdicion(categoria)" class="btn btn-info">
-          Editar
-        </button>
-        <button *ngIf="categoria.editando" (click)="guardarEdicion(categoria)" class="btn btn-primary">
-          Guardar
-        </button>
+        <!-- Siempre muestra el ícono, pero cambia el comportamiento -->
+        <a (click)="habilitarEdicion(i)">
+          <img [src]="editableIndex.includes(i) ? 'guardar.png' : 'editar.png'" alt="Editar o Guardar">
+        </a>
       </td>
       <td>
-        <button (click)="eliminarCategoria(categoria.categoriaId)" class="btn btn-danger">
-          Eliminar
-        </button>
+        <a (click)="eliminarCategoria(categoria.categoriaId)">
+          <img src="eliminar.png" alt="Eliminar">
+        </a>
       </td>
     </tr>
   </tbody>
 </table>
+
+<!-- Botón para guardar cambios -->
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button 
-    class="btn btn-success me-md-2" 
-    type="button" 
-    data-bs-toggle="modal" 
-    data-bs-target="#exampleModal"
-  >
-    Agregar Categoría
-  </button>
-
-  <button type="submit" 
-    class="btn btn-primary"
-    >
-    Guardar Cambios
-  </button>
-</div>
-
-<!-- Modal para agregar nueva categoría -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Categoría</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form (ngSubmit)="agregarCategoria()">
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Nombre:</label>
-            <input 
-              type="text" 
-              class="form-control" 
-              id="recipient-name" 
-              [(ngModel)]="nombre"
-              name="nombre"
-              required
-            />
-          </div>
-          <button type="submit" class="btn btn-success">Guardar</button>
-        </form>
-      </div>
-    </div>
-  </div>
+  <button class="btn btn-primary" type="button" (click)="guardarCambios()">Guardar Cambios</button>
 </div>
